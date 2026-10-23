@@ -437,10 +437,10 @@ All file names are lowercase with hyphens and no spaces, so they work on every o
 
 ## 9. Development life cycle
 
-I followed an agile approach in short sprints, testing at every stage instead of only at the end.
+I worked through six stages. Testing ran alongside the build, not only at the end.
 
 ```
-Plan -> Design -> Build in sprints -> Test (every sprint) -> Deploy -> Evaluate -> back to Plan
+Plan -> Design -> Build feature by feature -> Test -> Deploy -> Evaluate -> back to Plan
 ```
 
 ### Stage 1: Planning and research
@@ -461,43 +461,54 @@ Plan -> Design -> Build in sprints -> Test (every sprint) -> Deploy -> Evaluate 
 - Made wireframes for mobile, tablet and desktop.
 - Checked the palette for contrast before writing any code.
 
-### Stage 3: Development sprints
+### Stage 3: Development
 
-*[UPDATE WITH YOUR REAL DATES AND COMMIT LINKS]*
+I built and tested the site in a local working folder first. Then I committed it to this repository **one feature at a time, in the order each part depends on the last**: structure first, then design, logic and tests, shared features, and finally each page. Every commit adds one working piece, so the history can be followed step by step.
 
-| Sprint | Goal | What was built |
-|---|---|---|
-| 1 | Foundations | Repository, folder structure, HTML pages, header, footer, CSS tokens, deployment to GitHub Pages so the live site could be tested from day one |
-| 2 | Shared features | Theme switch, mobile menu, scroll reveal, newsletter validation, pixel band canvas |
-| 3 | Data and helpers | `data.js` content, `utils.js` functions, Jest set up with the first tests |
-| 4 | T-Minus | Countdown cards, Next up panel, filters, search, watchlist |
-| 5 | Client Side and The Shapers | Journey map with keyboard support, journey score, flip cards |
-| 6 | Wonder Why | List and article views, Explain it simply, votes, progress bar, ask a question |
-| 7 | Built by Lilian | Project tabs, screenshots, contact form |
-| 8 | Polish and testing | Accessibility audit, validation, responsive fixes, bug fixes, README |
+| # | Commit | Area | What it added |
+|---|---|---|---|
+| 1 | [`bebb06f`](https://github.com/llilzizl/designed-to-wonder/commit/bebb06f) | Structure | Home page HTML |
+| 2 | [`f522b13`](https://github.com/llilzizl/designed-to-wonder/commit/f522b13) | Setup | `.gitignore`, `package.json` and Jest |
+| 3 | [`254bc03`](https://github.com/llilzizl/designed-to-wonder/commit/254bc03) | Design assets | Logo, favicon and pixel 2 mark |
+| 4 | [`6999dc4`](https://github.com/llilzizl/designed-to-wonder/commit/6999dc4) | Styling | Main stylesheet with dark and light themes |
+| 5 | [`860766c`](https://github.com/llilzizl/designed-to-wonder/commit/860766c) | Logic | Helper functions for countdowns, filters and validation |
+| 6 | [`7bf09d2`](https://github.com/llilzizl/designed-to-wonder/commit/7bf09d2) | Testing | Jest tests for the helper functions |
+| 7 | [`fd75153`](https://github.com/llilzizl/designed-to-wonder/commit/fd75153) | Content | Site content for launches, shapers, posts and projects |
+| 8 | [`1a14687`](https://github.com/llilzizl/designed-to-wonder/commit/1a14687) | Shared features | Theme switch, mobile menu and newsletter validation |
+| 9 | [`76329ff`](https://github.com/llilzizl/designed-to-wonder/commit/76329ff) | Shared features | Animated pixel band in the hero |
+| 10 | [`7e67f86`](https://github.com/llilzizl/designed-to-wonder/commit/7e67f86) | Home page | Typewriter and live feed |
+| 11 | [`73fb544`](https://github.com/llilzizl/designed-to-wonder/commit/73fb544) | Client Side | Journey map and journey score |
+| 12 | [`38600b8`](https://github.com/llilzizl/designed-to-wonder/commit/38600b8) | T-Minus | Countdowns, filters and watchlist |
+| 13 | [`ee73acc`](https://github.com/llilzizl/designed-to-wonder/commit/ee73acc) | The Shapers | Flip cards |
+| 14 | [`27f2d50`](https://github.com/llilzizl/designed-to-wonder/commit/27f2d50) | Wonder Why | Simple mode, votes and questions |
+| 15 | [`e0f651c`](https://github.com/llilzizl/designed-to-wonder/commit/e0f651c) | Built by Lilian | Portfolio page and contact form |
+| 16 | [`b054eba`](https://github.com/llilzizl/designed-to-wonder/commit/b054eba) | Error handling | Custom 404 page |
+| 17 | [`5f9f01f`](https://github.com/llilzizl/designed-to-wonder/commit/5f9f01f) | Documentation | README screenshots |
+| 18 | [`492f11f`](https://github.com/llilzizl/designed-to-wonder/commit/492f11f) | Documentation | README |
 
-**How I worked in each sprint**
-1. Pick the user stories for the sprint.
-2. Write or update the helper functions and their Jest tests.
+All of these were committed on 23 October 2026. Changes made after testing on the live site are committed separately, one fix per commit (see [Bugs](#11-bugs)).
+
+**The order I built each feature in**
+1. Write the helper functions the feature needs in `utils.js`, with Jest tests.
+2. Add any content the feature needs to `data.js`.
 3. Build the HTML and CSS, then the page script.
-4. Test by hand at phone, tablet and desktop sizes.
-5. Commit each feature or fix on its own with a clear message, for example:
-   - `Add countdown helper and tests`
-   - `Add category filter to T-Minus`
-   - `Fix flip card scrolling to bottom on open`
-6. Push and check the live site matches.
+4. Test by hand at phone, tablet and desktop sizes, with the keyboard, and in both themes.
+5. Fix anything found, then validate the code.
+
+**Commit message style:** each message starts with a verb (`Add`, `Fix`, `Update`) and says what the commit does, so the history reads like a list of steps.
 
 ### Stage 4: Testing
 
-Testing happened during every sprint, not only at the end:
-- **Automated:** Jest tests run after every change to `utils.js` or `data.js`.
-- **Manual:** each feature was tested as it was built (see [Manual testing](#manual-feature-testing)).
-- **Validation:** HTML, CSS and JavaScript were validated at the end of each sprint.
-- **Accessibility:** axe and keyboard checks once each page was complete.
+Testing ran alongside the build:
+- **Automated:** Jest tests were run after every change to `utils.js` or `data.js`, and again on my own machine after the files were committed (59 of 59 passed).
+- **Manual:** each feature was tested by hand as it was finished (see [Manual testing](#manual-feature-testing)).
+- **Validation:** HTML, CSS and JavaScript were run through validators, and the errors found were fixed (see [Bugs](#11-bugs)).
+- **Accessibility:** axe and keyboard checks on every page, in both themes.
+- **Live site:** after deployment, every page and feature was checked again on GitHub Pages.
 
 ### Stage 5: Deployment
 
-Deployed to GitHub Pages at the start, so every sprint was tested on the live site as well as locally (see [Deployment](#12-deployment)).
+Deployed to GitHub Pages from the `main` branch once every feature was committed, then tested on the live site to make sure it matches the local version (see [Deployment](#12-deployment)).
 
 ### Stage 6: Evaluation and maintenance
 
@@ -506,6 +517,8 @@ Deployed to GitHub Pages at the start, so every sprint was tested on the live si
 - Keeping content in a data file makes adding new posts quick.
 
 **What I would do differently**
+- Commit to GitHub while building, not after, so the history also shows the fixes I made along the way.
+- Deploy to GitHub Pages on day one and test on the live site after every feature.
 - Write the tests before each feature every time, not after.
 - Plan the flip card height with real content earlier, which would have avoided one of the bugs below.
 
