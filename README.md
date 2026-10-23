@@ -802,7 +802,16 @@ Git was used throughout with small commits, one for each feature or fix, and mes
 ### Media
 - Logo and icons designed by me.
 - Project screenshots are of my own websites.
-- Mood board reference images were collected for inspiration only and are not used on the live site: *[TO DO: add where you found them, for example Pinterest, with links]*
+- Mood board reference images were collected for inspiration only and are not used on the live site:
+- Pinterest
+<img width="404" height="316" alt="image" src="https://github.com/user-attachments/assets/b271a6e2-d649-453f-857d-18aefdb66ed7" />
+https://pin.it/47lqjJNB2
+<img width="736" height="736" alt="image" src="https://github.com/user-attachments/assets/ceb19ffc-bb9e-4b96-93a3-e41d31f788be" />
+https://pin.it/5SCJNMtEs
+<img width="808" height="632" alt="image" src="https://github.com/user-attachments/assets/6e5320da-97f4-442b-a63d-35a3115d7b5c" />
+https://pin.it/4mXBpffag
+<img width="650" height="650" alt="image" src="https://github.com/user-attachments/assets/cdd89d13-5b18-45d4-9d52-ddcbb0fea452" />
+https://pin.it/gjEGwkx9f
 
 ### Acknowledgements
 - My tutor, for the Milestone 1 feedback that shaped this project's documentation.
