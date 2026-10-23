@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Built by Lilian: web development portfolio | Designed to Wonder</title>
+  <meta name="description" content="The web development portfolio of Lilian Edose, including the Les Braid It booking system with online payments and the Designed to Wonder tech hub.">
+  <meta name="theme-color" content="#05050A">
+  <link rel="icon" type="image/svg+xml" href="assets/images/global-favicon-app-icon.svg">
+
+  <!-- Fonts: Orbitron, Silkscreen and Inter from Google Fonts (fonts.google.com) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Orbitron:wght@500;700;900&amp;family=Silkscreen&amp;display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Decorative background glow and grain -->
+  <div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+
+  <!-- ========== Header ========== -->
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <img src="assets/images/global-logo-header-dark.svg" alt="Designed to Wonder home" width="935" height="160">
+    </a>
+
+    <nav id="main-nav" class="main-nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="client-side.html">Client Side</a></li>
+        <li><a href="t-minus.html">T-Minus</a></li>
+        <li><a href="the-shapers.html">The Shapers</a></li>
+        <li><a href="wonder-why.html">Wonder Why</a></li>
+        <li><a href="built-by-lilian.html" aria-current="page">Built by Lilian</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-button theme-toggle" type="button" aria-pressed="false" aria-label="Switch to light mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <button class="icon-button nav-toggle" type="button" aria-controls="main-nav" aria-expanded="false" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="hero hero-small" aria-labelledby="page-title">
+      <canvas class="pixel-band" aria-hidden="true"></canvas>
+      <div class="orb orb-right" aria-hidden="true"></div>
+      <div class="container">
+        <p class="eyebrow">Portfolio</p>
+        <h1 id="page-title" class="page-title chrome-text">Built by Lilian</h1>
+        <p class="lead center">I build websites that make the client journey feel effortless. Here is what I have built so far, and what I learnt along the way.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contact">Work with me <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">01 // Projects</p>
+            <h2 id="projects-title">Selected work</h2>
+          </div>
+        </div>
+        <div id="project-list">
+          <noscript><p>Project details need JavaScript switched on. You can visit <a href="https://llilzizl.github.io/les-braid-it-booking/" target="_blank" rel="noopener noreferrer">the Les Braid It booking site<span class="visually-hidden"> (opens in a new tab)</span></a> directly.</p></noscript>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="about-title">
+      <div class="container">
+        <div class="glass about-me reveal">
+          <div>
+            <p class="eyebrow">02 // About me</p>
+            <h2 id="about-title">Hi, I&rsquo;m Lilian</h2>
+            <p class="lead">I study Finance and Investment Banking at the University of Greenwich, I&rsquo;m working towards a Level 5 Diploma in Web Application Development, and I run Les Braid It, my hair braiding business in London.</p>
+            <p class="lead">Running a business taught me what clients need. Finance taught me to measure it. Code lets me build it.</p>
+          </div>
+          <ul class="skill-list" aria-label="Skills">
+            <li><strong>Front end</strong>HTML, CSS, JavaScript</li>
+            <li><strong>Back end</strong>Supabase database and login</li>
+            <li><strong>Payments</strong>Stripe deposits</li>
+            <li><strong>Testing</strong>Jest, manual testing, validators</li>
+            <li><strong>Tools</strong>Git, GitHub, VS Code</li>
+            <li><strong>Design</strong>Canva, accessibility, UX</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="glass card reveal">
+          <p class="eyebrow">03 // Contact</p>
+          <h2 id="contact-title">Let&rsquo;s build something</h2>
+          <p>Need a website, a booking system or a second pair of eyes on your client journey? Send me a message. When you press send, your email app opens with your message ready to go.</p>
+          <form class="form" id="contact-form" novalidate data-email="info@lesbraidit.co.uk">
+            <div class="form-row">
+              <div class="field">
+                <label for="contact-name">Name</label>
+                <input id="contact-name" name="name" type="text" autocomplete="name" aria-describedby="contact-name-error" required>
+                <p class="field-error" id="contact-name-error"></p>
+              </div>
+              <div class="field">
+                <label for="contact-email">Email</label>
+                <input id="contact-email" name="email" type="email" autocomplete="email" aria-describedby="contact-email-error" required>
+                <p class="field-error" id="contact-email-error"></p>
+              </div>
+            </div>
+            <div class="field">
+              <label for="contact-message">Message</label>
+              <textarea id="contact-message" name="message" aria-describedby="contact-message-error" required></textarea>
+              <p class="field-error" id="contact-message-error"></p>
+            </div>
+            <div>
+              <button class="btn btn-primary" type="submit">Send message</button>
+            </div>
+            <p class="form-status" id="contact-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== Footer ========== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-title chrome-text">Stay curious</p>
+          <p class="lead">One question, one launch and one shaper in your inbox each issue. No spam, just wonder.</p>
+          <div class="newsletter">
+            <form class="inline-form js-newsletter" novalidate>
+              <label class="visually-hidden" for="newsletter-email">Email address</label>
+              <input id="newsletter-email" type="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+              <button class="btn btn-primary" type="submit">Subscribe</button>
+            </form>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </div>
+        </div>
+
+        <nav aria-label="Footer">
+          <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="client-side.html">Client Side</a></li>
+          <li><a href="t-minus.html">T-Minus</a></li>
+          <li><a href="the-shapers.html">The Shapers</a></li>
+          <li><a href="wonder-why.html">Wonder Why</a></li>
+          <li><a href="built-by-lilian.html">Built by Lilian</a></li>
+            <li><a href="https://github.com/llilzizl" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+            <li><a href="https://www.instagram.com/lesbraidit/" target="_blank" rel="noopener noreferrer">Instagram<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span class="js-year">2026</span> Lilian Edose. Designed to Wonder.</p>
+        <p>Built with HTML, CSS and JavaScript in London.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== Scripts ========== -->
+  <script src="assets/js/utils.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/pixel-field.js"></script>
+  <script src="assets/js/built-by-lilian.js"></script>
+</body>
+</html>
