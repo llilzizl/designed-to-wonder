@@ -579,7 +579,14 @@ npm test
 
 ### Validator testing
 
-*[TO DO: add screenshots of the W3C and Jigsaw results]*
+<img width="1868" height="456" alt="image" src="https://github.com/user-attachments/assets/b0fd88f0-2a10-478c-82a7-22a46dd37fa9" />
+<img width="1876" height="416" alt="image" src="https://github.com/user-attachments/assets/f36a5e90-c39b-4cfd-abc3-e432d26c2b76" />
+<img width="1847" height="367" alt="image" src="https://github.com/user-attachments/assets/f76afe44-7937-4a17-b9e9-80c723c2d591" />
+<img width="1842" height="401" alt="image" src="https://github.com/user-attachments/assets/18dff4ef-b561-47f7-90c0-f6ffcd196a59" />
+<img width="1830" height="415" alt="image" src="https://github.com/user-attachments/assets/80b0774d-b56d-4e93-892b-0dc5cfac9366" />
+<img width="1835" height="425" alt="image" src="https://github.com/user-attachments/assets/be4c6620-e337-45c6-b489-3139d3ce065a" />
+
+<img width="1862" height="817" alt="image" src="https://github.com/user-attachments/assets/589fb3f8-2023-4e9d-b202-1daedc4a6bb1" />
 
 | Tool | Files | Result |
 |---|---|---|
@@ -608,14 +615,22 @@ Results from Chrome Lighthouse during development:
 
 | Page | Device | Performance | Accessibility | Best practices | SEO |
 |---|---|---|---|---|---|
-| Home | Mobile | 94 | 100 | 96 | 100 |
+| Home | Mobile | 96 | 100 | 100 | 100 |
 | Home | Desktop | 100 | 100 | 96 | 100 |
-| T-Minus | Mobile | 89 | 100 | 96 | 100 |
-| T-Minus | Desktop | 100 | 100 | 96 | 100 |
+| T-Minus | Mobile | 90 | 100 | 100 | 100 |
+| T-Minus | Desktop | 99 | 100 | 100 | 100 |
 | Wonder Why | Mobile | 98 | 100 | 96 | 100 |
 | Wonder Why | Desktop | 99 | 100 | 96 | 100 |
 
-The Best Practices score lost points only for a console error: the test environment could not reach Google Fonts. *[TO DO: re-run Lighthouse on the live site, update this table and add screenshots]*
+<img width="1612" height="826" alt="image" src="https://github.com/user-attachments/assets/0e0ea146-8933-46a2-a5fc-013c476b960a" />
+
+
+<img width="1700" height="887" alt="image" src="https://github.com/user-attachments/assets/3205c1e1-3315-4eeb-9d10-27b52a81eb16" />
+<img width="1902" height="887" alt="image" src="https://github.com/user-attachments/assets/944bc58c-656e-4769-921e-e84771b774dc" />
+<img width="1648" height="842" alt="image" src="https://github.com/user-attachments/assets/4a1199cf-b22d-4917-9345-abe124207867" />
+
+
+The Best Practices score lost points only for a console error: the test environment could not reach Google Fonts. 
 
 ### Responsiveness
 
