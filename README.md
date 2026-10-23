@@ -216,7 +216,10 @@ Every text colour was checked against the WCAG contrast formula, and the key pai
 | Light | Error messages | `#B0135B` on `#F3F2FA` | 6.1:1 | AA |
 | Light | Success messages | `#0B7A52` on `#F3F2FA` | 4.8:1 | AA |
 
-*[TO DO: add WebAIM screenshots for the main text, muted text and orchid pairs]*
+<img width="1252" height="865" alt="image" src="https://github.com/user-attachments/assets/619e4763-53af-460a-87bd-1e66953bafc2" />
+<img width="1033" height="862" alt="image" src="https://github.com/user-attachments/assets/b2eb9d4d-77fc-4edc-927c-1df68e24a8c8" />
+<img width="1410" height="861" alt="image" src="https://github.com/user-attachments/assets/1726fb46-2b36-4c91-9d2a-8dd5886429aa" />
+
 
 **Foreground over background (criterion 1.4):** the pixel band and glowing orbs sit behind the hero titles. To keep text readable I faded the band out at its edges, kept it at 50% opacity and gave the hero text a soft dark halo. All body text sits on solid or frosted panels, never directly on the moving graphics.
 
@@ -694,7 +697,7 @@ No page scrolls sideways at any of these widths.
 | Contact form | Submit a valid message | Success message and the email app opens | Pass |
 | External links | Click any external link | Opens in a new tab | Pass |
 | Reduced motion | Turn on reduced motion in the device settings | Pixel band, orbs and typewriter stop | Pass |
-| 404 | Visit a page that doesn't exist on the live site | Signal lost page shows | *[TO DO: test on live site]* |
+| 404 | Visit a page that doesn't exist on the live site | Signal lost page shows | Pass |
 
 ### User story testing
 
