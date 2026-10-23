@@ -1,0 +1,12 @@
+{
+  "name": "designed-to-wonder",
+  "version": "1.0.0",
+  "description": "Designed to Wonder: an interactive tech publication and web development portfolio by Lilian Edose.",
+  "private": true,
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
