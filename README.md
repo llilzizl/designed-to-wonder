@@ -616,19 +616,21 @@ Results from Chrome Lighthouse during development:
 | Page | Device | Performance | Accessibility | Best practices | SEO |
 |---|---|---|---|---|---|
 | Home | Mobile | 96 | 100 | 100 | 100 |
-| Home | Desktop | 100 | 100 | 96 | 100 |
+| Home | Desktop | 86 | 100 | 100 | 100 |
 | T-Minus | Mobile | 90 | 100 | 100 | 100 |
 | T-Minus | Desktop | 99 | 100 | 100 | 100 |
-| Wonder Why | Mobile | 98 | 100 | 96 | 100 |
-| Wonder Why | Desktop | 99 | 100 | 96 | 100 |
+| Wonder Why | Mobile | 73 | 100 | 100 | 100 |
+| Wonder Why | Desktop | 99 | 100 | 100 | 100 |
 
 <img width="1612" height="826" alt="image" src="https://github.com/user-attachments/assets/0e0ea146-8933-46a2-a5fc-013c476b960a" />
+<img width="1690" height="875" alt="image" src="https://github.com/user-attachments/assets/7578643c-99fc-4941-b73a-eb968c83614d" />
 
 
-<img width="1700" height="887" alt="image" src="https://github.com/user-attachments/assets/3205c1e1-3315-4eeb-9d10-27b52a81eb16" />
 <img width="1902" height="887" alt="image" src="https://github.com/user-attachments/assets/944bc58c-656e-4769-921e-e84771b774dc" />
 <img width="1648" height="842" alt="image" src="https://github.com/user-attachments/assets/4a1199cf-b22d-4917-9345-abe124207867" />
 
+<img width="763" height="741" alt="image" src="https://github.com/user-attachments/assets/77349ce5-20bf-46b1-9eaf-f65a30d0959e" />
+<img width="1741" height="890" alt="image" src="https://github.com/user-attachments/assets/8d244543-1b94-4dd0-945b-4cb4296f16a8" />
 
 The Best Practices score lost points only for a console error: the test environment could not reach Google Fonts. 
 
@@ -651,9 +653,9 @@ No page scrolls sideways at any of these widths.
 | Browser | Result |
 |---|---|
 | Chrome | Pass |
-| Firefox | *[TO DO]* |
-| Safari (Mac and iPhone) | *[TO DO]* |
-| Edge | *[TO DO]* |
+| Firefox | Pass |
+| Safari (Mac and iPhone) | Pass |
+| Edge | Pass |
 
 ### Manual feature testing
 
