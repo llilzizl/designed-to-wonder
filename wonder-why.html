@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wonder Why: tech questions answered | Designed to Wonder</title>
+  <meta name="description" content="Big tech questions answered honestly, like why AI can't replace humans. Switch on Explain it simply for younger readers, vote and ask your own question.">
+  <meta name="theme-color" content="#05050A">
+  <link rel="icon" type="image/svg+xml" href="assets/images/global-favicon-app-icon.svg">
+
+  <!-- Fonts: Orbitron, Silkscreen and Inter from Google Fonts (fonts.google.com) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Orbitron:wght@500;700;900&amp;family=Silkscreen&amp;display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Decorative background glow and grain -->
+  <div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+
+  <!-- ========== Header ========== -->
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <img src="assets/images/global-logo-header-dark.svg" alt="Designed to Wonder home" width="935" height="160">
+    </a>
+
+    <nav id="main-nav" class="main-nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="client-side.html">Client Side</a></li>
+        <li><a href="t-minus.html">T-Minus</a></li>
+        <li><a href="the-shapers.html">The Shapers</a></li>
+        <li><a href="wonder-why.html" aria-current="page">Wonder Why</a></li>
+        <li><a href="built-by-lilian.html">Built by Lilian</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-button theme-toggle" type="button" aria-pressed="false" aria-label="Switch to light mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <button class="icon-button nav-toggle" type="button" aria-controls="main-nav" aria-expanded="false" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="reading-progress" id="reading-progress" aria-hidden="true"></div>
+
+  <main id="main">
+
+    <!-- ========== List of questions ========== -->
+    <div id="list-view">
+      <section class="hero hero-small" aria-labelledby="page-title">
+        <canvas class="pixel-band" aria-hidden="true"></canvas>
+        <div class="orb orb-small" aria-hidden="true"></div>
+        <div class="container">
+          <p class="eyebrow">Questions and answers</p>
+          <h1 id="page-title" class="page-title chrome-text">Wonder Why</h1>
+          <p class="lead center">One big question. One honest answer. Then over to you. Every post has an &ldquo;Explain it simply&rdquo; switch, so it works for curious readers of any age.</p>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="posts-title">
+        <div class="container">
+          <h2 id="posts-title" class="visually-hidden">All questions</h2>
+          <div class="toolbar">
+            <div class="chip-row" id="post-filters" role="group" aria-label="Filter questions by topic"></div>
+            <div class="search-field">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+              <label class="visually-hidden" for="post-search">Search questions</label>
+              <input id="post-search" type="search" placeholder="Search questions..." autocomplete="off">
+            </div>
+          </div>
+          <p class="results-count" id="post-count" aria-live="polite"></p>
+          <div class="grid" id="post-grid">
+            <noscript><p>The list of questions needs JavaScript switched on.</p></noscript>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ========== One post, shown when a question is chosen ========== -->
+    <article class="section" id="article-view" hidden>
+      <div class="container">
+        <div class="article">
+          <a class="btn btn-ghost btn-small" href="wonder-why.html" id="back-to-list">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+            All questions
+          </a>
+          <header class="article-header">
+            <p class="post-meta center" id="article-meta"></p>
+            <h1 class="chrome-text" id="article-title" tabindex="-1">Loading question</h1>
+            <div class="article-tools">
+              <button class="switch" type="button" role="switch" aria-checked="false" id="simple-switch">
+                <span class="switch-track" aria-hidden="true"></span>
+                Explain it simply
+              </button>
+            </div>
+          </header>
+          <div class="glass article-body" id="article-body" aria-live="polite"></div>
+
+          <section class="glass poll" aria-labelledby="poll-title">
+            <p class="eyebrow">Over to you</p>
+            <h2 id="poll-title">What do you think?</h2>
+            <p>Do you agree with my answer?</p>
+            <div class="poll-options" id="poll-options" role="group" aria-labelledby="poll-title">
+              <button class="btn btn-ghost btn-small" type="button" data-vote="agree" aria-pressed="false">I agree</button>
+              <button class="btn btn-ghost btn-small" type="button" data-vote="unsure" aria-pressed="false">Not sure</button>
+              <button class="btn btn-ghost btn-small" type="button" data-vote="disagree" aria-pressed="false">I see it differently</button>
+            </div>
+            <p class="form-status" id="poll-status" role="status" aria-live="polite"></p>
+          </section>
+        </div>
+      </div>
+    </article>
+
+    <!-- ========== Ask a question ========== -->
+    <section class="section" id="ask" aria-labelledby="ask-title">
+      <div class="container">
+        <div class="glass card reveal">
+          <p class="eyebrow">Your turn</p>
+          <h2 id="ask-title">What do you wonder about?</h2>
+          <p>Send a question you would like answered. It is saved in this browser so you can keep track of what you have asked.</p>
+          <form class="form" id="ask-form" novalidate>
+            <div class="field">
+              <label for="question-input">Your question</label>
+              <input id="question-input" name="question" type="text" maxlength="200" placeholder="Wonder why..." aria-describedby="question-error" required>
+              <p class="field-error" id="question-error"></p>
+            </div>
+            <div>
+              <button class="btn btn-primary" type="submit">Send my question</button>
+            </div>
+          </form>
+          <p class="form-status" id="ask-status" role="status" aria-live="polite"></p>
+          <h3 class="visually-hidden" id="my-questions-title">Your questions</h3>
+          <ul class="question-list" id="question-list" aria-labelledby="my-questions-title"></ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== Footer ========== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-title chrome-text">Stay curious</p>
+          <p class="lead">One question, one launch and one shaper in your inbox each issue. No spam, just wonder.</p>
+          <div class="newsletter">
+            <form class="inline-form js-newsletter" novalidate>
+              <label class="visually-hidden" for="newsletter-email">Email address</label>
+              <input id="newsletter-email" type="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+              <button class="btn btn-primary" type="submit">Subscribe</button>
+            </form>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </div>
+        </div>
+
+        <nav aria-label="Footer">
+          <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="client-side.html">Client Side</a></li>
+          <li><a href="t-minus.html">T-Minus</a></li>
+          <li><a href="the-shapers.html">The Shapers</a></li>
+          <li><a href="wonder-why.html">Wonder Why</a></li>
+          <li><a href="built-by-lilian.html">Built by Lilian</a></li>
+            <li><a href="https://github.com/llilzizl" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+            <li><a href="https://www.instagram.com/lesbraidit/" target="_blank" rel="noopener noreferrer">Instagram<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span class="js-year">2026</span> Lilian Edose. Designed to Wonder.</p>
+        <p>Built with HTML, CSS and JavaScript in London.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== Scripts ========== -->
+  <script src="assets/js/utils.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/pixel-field.js"></script>
+  <script src="assets/js/wonder-why.js"></script>
+</body>
+</html>
