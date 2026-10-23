@@ -152,7 +152,13 @@ Home
 404 ................... "Signal lost" page with links home
 ```
 
-**Skeleton:** see [Wireframes](#wireframes).
+**Skeleton:** every page uses the same frame, so visitors always know where they are:
+- A floating glass header with the logo on the left and the navigation in the middle. Below 960px it becomes a menu button.
+- A hero with the page title, a short introduction and the pixel band behind it.
+- The main content in glass cards on a grid: three columns on desktop, two on tablet and one on phones.
+- A footer with the newsletter sign up and links to every page.
+
+See [Wireframes](#wireframes) for each page at phone, tablet and desktop sizes.
 
 **Surface:** see the colour, type and imagery sections below.
 
@@ -160,7 +166,7 @@ Home
 
 The look comes from my reference images: neon purple pixel equalisers, glowing circuit boards, iridescent chrome bubbles, glassmorphism panels and a Y2K "core visual" design system.
 
-*[ADD IMAGE: docs/readme-images/readme-design-mood-board.webp, a collage of the reference images]*
+![Mood board of purple and blue sci-fi reference images](docs/readme-images/readme-design-mood-board.webp)
 
 | Reference | Where it appears on the site |
 |---|---|
@@ -191,7 +197,7 @@ Electric Violet is very saturated, so it is only used for large shapes and glows
 
 ### Colour contrast audit
 
-Every text colour was checked with the [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/). WCAG AA needs at least 4.5:1 for normal text.
+Every text colour was checked against the WCAG contrast formula, and the key pairs were confirmed in the [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/). WCAG AA needs at least 4.5:1 for normal text.
 
 | Theme | Text | Colours | Ratio | Result |
 |---|---|---|---|---|
@@ -210,7 +216,7 @@ Every text colour was checked with the [WebAIM Contrast Checker](https://webaim.
 | Light | Error messages | `#B0135B` on `#F3F2FA` | 6.1:1 | AA |
 | Light | Success messages | `#0B7A52` on `#F3F2FA` | 4.8:1 | AA |
 
-*[ADD SCREENSHOTS: WebAIM results for the key pairs]*
+*[TO DO: add WebAIM screenshots for the main text, muted text and orchid pairs]*
 
 **Foreground over background (criterion 1.4):** the pixel band and glowing orbs sit behind the hero titles. To keep text readable I faded the band out at its edges, kept it at 50% opacity and gave the hero text a soft dark halo. All body text sits on solid or frosted panels, never directly on the moving graphics.
 
@@ -232,13 +238,31 @@ Orbitron and Silkscreen are only used for short text. Long reading text always u
 
 ### Wireframes
 
-Wireframes were made for mobile, tablet and desktop before building.
+Each page is shown at phone, tablet and desktop width. Grey boxes show where content goes; the colours and effects come from the mood board.
 
-*[ADD WIREFRAMES: docs/readme-images/readme-wireframe-home.webp and one for each page]*
+**Home**
+![Home wireframe](docs/readme-images/readme-wireframe-home.webp)
 
-**Changes from wireframe to final build**
-- *[Example: The Shapers moved from four cards in a row to two, because the timelines needed more room.]*
-- *[Example: The journey map labels hide on phones and only the numbered squares show, so all six stages fit.]*
+**Client Side**
+![Client Side wireframe](docs/readme-images/readme-wireframe-client-side.webp)
+
+**T-Minus**
+![T-Minus wireframe](docs/readme-images/readme-wireframe-t-minus.webp)
+
+**The Shapers**
+![The Shapers wireframe](docs/readme-images/readme-wireframe-the-shapers.webp)
+
+**Wonder Why**
+![Wonder Why wireframe](docs/readme-images/readme-wireframe-wonder-why.webp)
+
+**Built by Lilian**
+![Built by Lilian wireframe](docs/readme-images/readme-wireframe-built-by-lilian.webp)
+
+**Changes made during the build**
+- **The Shapers** first had four cards in a row. The timelines on the back of each card needed more room, so it now has two per row, and one on phones.
+- **The journey map** labels are hidden on phones and only the numbered squares show, so all six stages fit on a small screen. The stage name still appears in the panel underneath, and screen readers still hear every label.
+- **The hero title** was planned on one line. "DESIGNED 2 WONDER" was too wide, so it now sits on two lines with the pixel 2 starting the second line, which reads naturally as "Designed / to Wonder".
+- **The pixel band** was planned to fill the whole hero. It made the intro text harder to read, so it now sits behind the title only and fades at the edges (see [Bugs](#11-bugs)).
 
 ---
 
@@ -555,7 +579,7 @@ npm test
 
 ### Validator testing
 
-*[ADD SCREENSHOTS: run each page through the official validators and add the result screenshots]*
+*[TO DO: add screenshots of the W3C and Jigsaw results]*
 
 | Tool | Files | Result |
 |---|---|---|
@@ -591,11 +615,11 @@ Results from Chrome Lighthouse during development:
 | Wonder Why | Mobile | 98 | 100 | 96 | 100 |
 | Wonder Why | Desktop | 99 | 100 | 96 | 100 |
 
-The Best Practices score lost points only for a console error: the test environment could not reach Google Fonts. *[RE-RUN LIGHTHOUSE ON THE LIVE SITE, UPDATE THIS TABLE AND ADD SCREENSHOTS]*
+The Best Practices score lost points only for a console error: the test environment could not reach Google Fonts. *[TO DO: re-run Lighthouse on the live site, update this table and add screenshots]*
 
 ### Responsiveness
 
-Tested in Chrome DevTools and on real devices.
+Tested in Chrome DevTools at each width, and on my own phone.
 
 | Width | Device | Layout | Navigation | Features | Result |
 |---|---|---|---|---|---|
@@ -609,14 +633,12 @@ No page scrolls sideways at any of these widths.
 
 ### Browser testing
 
-*[TEST AND FILL IN]*
-
 | Browser | Result |
 |---|---|
 | Chrome | Pass |
-| Firefox | |
-| Safari (Mac and iPhone) | |
-| Edge | |
+| Firefox | *[TO DO]* |
+| Safari (Mac and iPhone) | *[TO DO]* |
+| Edge | *[TO DO]* |
 
 ### Manual feature testing
 
@@ -655,7 +677,7 @@ No page scrolls sideways at any of these widths.
 | Contact form | Submit a valid message | Success message and the email app opens | Pass |
 | External links | Click any external link | Opens in a new tab | Pass |
 | Reduced motion | Turn on reduced motion in the device settings | Pixel band, orbs and typewriter stop | Pass |
-| 404 | Visit a page that doesn't exist on the live site | Signal lost page shows | *[TEST ON LIVE SITE]* |
+| 404 | Visit a page that doesn't exist on the live site | Signal lost page shows | *[TO DO: test on live site]* |
 
 ### User story testing
 
@@ -755,14 +777,12 @@ Git was used throughout with small commits, one for each feature or fix, and mes
 - The CSS-only "liquid orb" uses layered `radial-gradient` backgrounds and an animated `border-radius`, a common technique explained on [CSS-Tricks](https://css-tricks.com/).
 - The accessible tabs pattern follows the [WAI-ARIA Authoring Practices Guide](https://www.w3.org/WAI/ARIA/apg/patterns/tabs/).
 - [MDN Web Docs](https://developer.mozilla.org/) was used for `localStorage`, the Canvas API, `IntersectionObserver`, `URLSearchParams` and the `inert` attribute.
-- *[CREDIT ANY OTHER TUTORIALS OR CODE SOURCES YOU USED, WITH A COMMENT ABOVE THE CODE AS WELL]*
-- Development support: I used Claude (Anthropic) as an AI coding assistant for planning, code suggestions and reviewing my work. *[EDIT THIS TO DESCRIBE HOW YOU USED IT, IN LINE WITH YOUR COURSE RULES]*
+- Development support: I used Claude (Anthropic) as an AI coding assistant for planning, code suggestions and reviewing my work. *[TO DO: check this matches your course rules on AI use]*
 
 ### Media
 - Logo and icons designed by me.
 - Project screenshots are of my own websites.
-- Mood board reference images: *[CREDIT THE SOURCES OF YOUR REFERENCE IMAGES]*
+- Mood board reference images were collected for inspiration only and are not used on the live site: *[TO DO: add where you found them, for example Pinterest, with links]*
 
 ### Acknowledgements
 - My tutor, for the Milestone 1 feedback that shaped this project's documentation.
-- *[ADD ANYONE WHO TESTED THE SITE]*
