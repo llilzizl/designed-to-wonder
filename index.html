@@ -59,7 +59,7 @@
       <div class="orb orb-small" aria-hidden="true"></div>
 
       <div class="container">
-        <p class="eyebrow">Issue 01 // Tech, curiosity and the future</p>
+        <p class="eyebrow hero-eyebrow">Tech, curiosity and the future</p>
         <h1 id="hero-title" class="hero-title">
           <span class="chrome-text">Designed</span><br>
           <span class="visually-hidden">to</span>
@@ -67,17 +67,28 @@
           <span class="chrome-text">Wonder</span>
         </h1>
         <p class="typewriter" id="typewriter" aria-hidden="true"></p>
-        <p class="lead">A curious corner of the internet about how technology is changing our world, now and forever. For anyone, of any age, who has ever asked: how does that actually work?</p>
-        <div class="hero-actions">
+        <div class="hero-actions hero-actions-large">
           <a class="btn btn-primary" href="wonder-why.html">Start wondering <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           <a class="btn btn-ghost" href="built-by-lilian.html">See what I build</a>
         </div>
+      </div>
+    </section>
 
-        <div class="stat-strip glass">
-          <div class="stat"><span class="stat-label">Issue</span><span class="stat-value">01</span></div>
-          <div class="stat"><span class="stat-label">Launches tracked</span><span class="stat-value" id="stat-launches">9</span></div>
-          <div class="stat"><span class="stat-label">Questions asked</span><span class="stat-value" id="stat-questions">3</span></div>
-          <div class="stat"><span class="stat-label">Next launch</span><span class="stat-value" id="stat-next">Soon</span></div>
+    <!-- ========== Newsletter sign up, near the top ========== -->
+    <section class="section signup-callout" aria-labelledby="signup-title">
+      <div class="container">
+        <div class="signup-panel reveal">
+          <p class="eyebrow">Coming soon // The newsletter</p>
+          <h2 id="signup-title" class="footer-title chrome-text">Stay curious</h2>
+          <p class="lead">The Designed to Wonder newsletter is on its way. Add your email below and be the first to know when it launches.</p>
+          <div class="newsletter">
+            <form class="inline-form js-newsletter" novalidate>
+              <label class="visually-hidden" for="newsletter-email">Email address</label>
+              <input id="newsletter-email" type="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+              <button class="btn btn-primary" type="submit">Notify me</button>
+            </form>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </div>
         </div>
       </div>
     </section>
@@ -87,14 +98,11 @@
       <div class="container home-intro">
         <div class="reveal">
           <p class="eyebrow">01 // The idea</p>
-          <h2 id="about-title">Tech is changing everything. Let&rsquo;s talk about it.</h2>
-          <p class="lead">Designed to Wonder is a hub for tech news, honest answers and real conversations about where we are heading. I write about the launches worth watching, the people who shaped the tools we use, and how to turn clever tech into a better journey for real people.</p>
-          <p class="lead">I&rsquo;m Lilian: a finance student, web developer and hairstylist. That mix means I care about two things at once, how technology works and how it feels to the person using it.</p>
+          <h2 id="about-title">Tech is changing everything. <span class="holo-text">Designed to Wonder.</span></h2>
+          <p class="lead">Designed to Wonder is a hub for tech news, honest conversations and real answers about where we&rsquo;re heading. Join the community to keep track of the tech launches worth watching, get inspired by the people who have shaped tech, and learn how to use tech to create a better experience for real people.</p>
         </div>
-        <div class="glass mark-frame reveal">
-          <span class="corner-marks" aria-hidden="true"></span>
-          <img src="assets/images/global-mark-pixel-two-gradient.svg" alt="The Designed to Wonder pixel 2 symbol, which also reads as a question mark" width="80" height="112">
-          <span class="frame-caption" aria-hidden="true">Sys // 2 = ?</span>
+        <div class="pixel-mark reveal">
+          <canvas id="pixel-mark" role="img" aria-label="The Designed to Wonder pixel 2 symbol, which also reads as a question mark, built from twinkling pixels"></canvas>
         </div>
       </div>
     </section>
@@ -115,38 +123,45 @@
           <a class="glass holo-edge card card-link page-card reveal" href="client-side.html">
             <p class="eyebrow">Client journey</p>
             <h3>Client Side</h3>
-            <p>What Apple, my styling chair and good websites can teach us about making every step feel effortless.</p>
+            <p>Get to understand how tech feels from the client side. Walk through case studies on client journeys and data on how clients respond.</p>
             <span class="card-number" aria-hidden="true">01</span>
           </a>
           <a class="glass holo-edge card card-link page-card reveal" href="t-minus.html">
             <p class="eyebrow">New launches</p>
             <h3>T-Minus</h3>
-            <p>Live countdowns to the phones, robots, cars and rockets arriving next. Save the ones you care about.</p>
+            <p>Keep track of tech launches. This includes phones, robots, cars and rockets. There&rsquo;s so much to look forward to!</p>
             <span class="card-number" aria-hidden="true">02</span>
           </a>
           <a class="glass holo-edge card card-link page-card reveal" href="the-shapers.html">
             <p class="eyebrow">People in tech</p>
             <h3>The Shapers</h3>
-            <p>Flip through the stories of people like Steve Jobs and Mira Murati, and the lessons they leave builders.</p>
+            <p>Who are the people really shaping tech as we know it? Flip through the stories of people like Steve Jobs and Mira Murati.</p>
             <span class="card-number" aria-hidden="true">03</span>
           </a>
           <a class="glass holo-edge card card-link page-card reveal" href="wonder-why.html">
             <p class="eyebrow">Questions and answers</p>
             <h3>Wonder Why</h3>
-            <p>One big question, one honest answer, then over to you. Switch on &ldquo;Explain it simply&rdquo; for younger readers.</p>
+            <p>A question and answer blog with honest conversations about where tech is heading, and what we can do as a society to stay involved. Switch on &ldquo;Explain it simply&rdquo; for younger readers.</p>
             <span class="card-number" aria-hidden="true">04</span>
           </a>
           <a class="glass holo-edge card card-link page-card reveal" href="built-by-lilian.html">
             <p class="eyebrow">Portfolio</p>
             <h3>Built by Lilian</h3>
-            <p>The websites I have built, from my first HTML page to a full booking system with payments.</p>
+            <p>My web developer portfolio.</p>
             <span class="card-number" aria-hidden="true">05</span>
           </a>
           <div class="glass card page-card reveal">
-            <p class="eyebrow">Your move</p>
-            <h3>Got a question?</h3>
-            <p>The best posts start with a reader&rsquo;s question. Send yours and it could be the next Wonder Why.</p>
-            <a class="btn btn-ghost btn-small" href="wonder-why.html#ask">Ask a question</a>
+            <p class="eyebrow">Stay curious</p>
+            <h3>The newsletter</h3>
+            <p>New launches, the shapers behind them, client journey case studies and honest answers, all in one easy read. Join the list for launch day.</p>
+            <div class="newsletter">
+              <form class="inline-form js-newsletter" novalidate>
+                <label class="visually-hidden" for="card-newsletter-email">Email address</label>
+                <input id="card-newsletter-email" type="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+                <button class="btn btn-primary btn-small" type="submit">Notify me</button>
+              </form>
+              <p class="form-status" role="status" aria-live="polite"></p>
+            </div>
           </div>
         </div>
       </div>
@@ -187,20 +202,7 @@
   <!-- ========== Footer ========== -->
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-grid">
-        <div>
-          <p class="footer-title chrome-text">Stay curious</p>
-          <p class="lead">One question, one launch and one shaper in your inbox each issue. No spam, just wonder.</p>
-          <div class="newsletter">
-            <form class="inline-form js-newsletter" novalidate>
-              <label class="visually-hidden" for="newsletter-email">Email address</label>
-              <input id="newsletter-email" type="email" name="email" placeholder="you@example.com" autocomplete="email" required>
-              <button class="btn btn-primary" type="submit">Subscribe</button>
-            </form>
-            <p class="form-status" role="status" aria-live="polite"></p>
-          </div>
-        </div>
-
+      <div class="footer-grid footer-menu-only">
         <nav aria-label="Footer">
           <ul class="footer-links">
           <li><a href="index.html">Home</a></li>
@@ -216,8 +218,7 @@
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; <span class="js-year">2026</span> Lilian Edose. Designed to Wonder.</p>
-        <p>Built with HTML, CSS and JavaScript in London.</p>
+        <p>&copy; <span class="js-year">2026</span> Designed to Wonder.</p>
       </div>
     </div>
   </footer>

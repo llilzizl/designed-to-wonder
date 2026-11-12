@@ -2,7 +2,7 @@
    Designed to Wonder: home page
    ----------------------------------------------------------
    1. Typewriter tagline under the logo
-   2. Stats strip (counts come from data.js)
+   2. Twinkling pixel 2 beside "Tech is changing everything"
    3. Live feed: next launch countdown, latest question and
       a featured shaper that changes every day
    ========================================================== */
@@ -15,10 +15,9 @@
 
   /* ---------- 1. Typewriter ---------- */
   var PHRASES = [
-    'Exploring the tech that shapes tomorrow',
-    'Asking the questions nobody explains',
-    'From launch pad to living room',
-    'Built for the curious, of every age'
+    'Built for the curious',
+    'For those that are designed to wonder',
+    'Exploring the tech that shapes tomorrow'
   ];
 
   function startTypewriter() {
@@ -57,26 +56,125 @@
     tick();
   }
 
-  /* ---------- 2. Stats ---------- */
-  function fillStats(nextLaunch) {
-    var launches = document.getElementById('stat-launches');
-    var questions = document.getElementById('stat-questions');
-    var next = document.getElementById('stat-next');
+  /* ---------- 2. Twinkling pixel 2 ----------
+     The pixels of the 2 / question mark drop in from the top,
+     row by row, then twinkle. Every few seconds they rain down
+     again. Drawn on a transparent canvas over the page background. */
+  // [column, row, kind]: kind 0 = gradient, 1 = soft blue, 2 = white
+  var MARK_CELLS = [
+    [1, 0, 0], [2, 0, 0], [3, 0, 0],
+    [0, 1, 0], [4, 1, 0],
+    [4, 2, 0],
+    [3, 3, 0],
+    [2, 4, 0],
+    [1, 5, 1],
+    [0, 6, 1], [1, 6, 1], [2, 6, 2], [3, 6, 1], [4, 6, 1]
+  ];
+  var MARK_ROW_COLOURS = ['#E07BFF', '#C77BFF', '#A35CFF', '#7B2FFF', '#5A55FF', '#3D7BFF', '#3D7BFF'];
 
-    if (launches) {
-      launches.textContent = data.launches.length;
+  function startPixelMark() {
+    var canvas = document.getElementById('pixel-mark');
+    if (!canvas || !canvas.getContext) {
+      return;
     }
-    if (questions) {
-      questions.textContent = data.posts.length;
+    var context = canvas.getContext('2d');
+    var size = 0;
+    var unit = 0;
+    var CYCLE = 9000; // ms for one drop + twinkle loop
+
+    // Each cell gets its own twinkle speed and timing
+    var cells = MARK_CELLS.map(function (cell) {
+      return {
+        col: cell[0],
+        row: cell[1],
+        kind: cell[2],
+        phase: Math.random() * Math.PI * 2,
+        speed: 1.5 + Math.random() * 2.5
+      };
+    });
+
+    function resize() {
+      var ratio = Math.min(window.devicePixelRatio || 1, 2);
+      var rect = canvas.getBoundingClientRect();
+      size = rect.width;
+      canvas.width = Math.round(rect.width * ratio);
+      canvas.height = Math.round(rect.height * ratio);
+      context.setTransform(ratio, 0, 0, ratio, 0, 0);
+      // 5 columns by 7 rows, with room above for the drop
+      unit = Math.min(rect.width / 9, rect.height / 11);
     }
-    if (next) {
-      if (nextLaunch) {
-        var days = utils.getTimeRemaining(nextLaunch.date).days;
-        next.textContent = days === 1 ? '1 day' : days + ' days';
-      } else {
-        next.textContent = 'See T-Minus';
+
+    function draw(time) {
+      var t = time % CYCLE;
+      var seconds = time / 1000;
+      var height = canvas.height / Math.min(window.devicePixelRatio || 1, 2);
+      var offsetX = (size - unit * 5) / 2;
+      var offsetY = (height - unit * 7) / 2;
+      var square = unit * 0.82;
+
+      context.clearRect(0, 0, size, height);
+
+      cells.forEach(function (cell) {
+        // Rows drop in one after another from top to bottom
+        var start = cell.row * 180 + cell.col * 40;
+        var drop = Math.min(1, Math.max(0, (t - start) / 600));
+        var eased = 1 - Math.pow(1 - drop, 3);
+        // Near the end of the loop the pixels fall away downwards
+        var leave = Math.min(1, Math.max(0, (t - (CYCLE - 1200 + cell.row * 80)) / 600));
+
+        var x = offsetX + cell.col * unit + (unit - square) / 2;
+        var y = offsetY + cell.row * unit + (unit - square) / 2 -
+          (1 - eased) * unit * 4 + leave * leave * unit * 3;
+
+        var twinkle = 0.6 + 0.4 * Math.sin(seconds * cell.speed + cell.phase);
+        var alpha = eased * (1 - leave) * twinkle;
+        if (cell.kind === 1) {
+          alpha *= 0.6;
+        }
+        if (alpha <= 0.01) {
+          return;
+        }
+
+        var colour = cell.kind === 2 ? '#F5F4FF' : cell.kind === 1 ? '#3D7BFF' : MARK_ROW_COLOURS[cell.row];
+        context.globalAlpha = alpha;
+        context.shadowColor = colour;
+        context.shadowBlur = unit * 0.6 * twinkle;
+        context.fillStyle = colour;
+        context.beginPath();
+        if (context.roundRect) {
+          context.roundRect(x, y, square, square, square * 0.15);
+        } else {
+          context.rect(x, y, square, square);
+        }
+        context.fill();
+      });
+      context.globalAlpha = 1;
+      context.shadowBlur = 0;
+    }
+
+    resize();
+    window.addEventListener('resize', function () {
+      resize();
+      if (reduceMotion) {
+        draw(CYCLE / 2);
       }
+    });
+
+    // Reduced motion: a still, fully formed mark
+    if (reduceMotion) {
+      cells.forEach(function (cell) {
+        cell.speed = 0;
+        cell.phase = Math.PI / 2;
+      });
+      draw(CYCLE / 2);
+      return;
     }
+
+    function loop(time) {
+      draw(time);
+      window.requestAnimationFrame(loop);
+    }
+    window.requestAnimationFrame(loop);
   }
 
   /* ---------- 3. Live feed ---------- */
@@ -148,7 +246,7 @@
 
   var nextLaunch = utils.getNextLaunch(data.launches);
   startTypewriter();
-  fillStats(nextLaunch);
+  startPixelMark();
   renderLaunch(nextLaunch);
   renderQuestion();
   renderShaper();
