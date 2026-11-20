@@ -859,7 +859,7 @@ Git was used throughout with small commits, one for each feature or fix, and mes
 - Development support: I used Claude (Anthropic) as an AI coding assistant for planning, code suggestions and reviewing my work.
 
 ### Media
-- Logo and icons designed by with help from claude ai.
+- Logo and icons designed by me, with help from Claude (Anthropic).
 - Project screenshots are of my own websites.
 - Mood board reference images were collected for inspiration only and are not used on the live site:
 - Pinterest
@@ -874,4 +874,4 @@ https://pin.it/gjEGwkx9f
 
 ### Acknowledgements
 - My tutor, for the Milestone 1 feedback that shaped this project's documentation.
-- Claude AI in assisting with coding debugging
+- Claude (Anthropic), for help with debugging my code.
