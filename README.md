@@ -856,7 +856,7 @@ Git was used throughout with small commits, one for each feature or fix, and mes
 - The CSS-only "liquid orb" uses layered `radial-gradient` backgrounds and an animated `border-radius`, a common technique explained on [CSS-Tricks](https://css-tricks.com/).
 - The accessible tabs pattern follows the [WAI-ARIA Authoring Practices Guide](https://www.w3.org/WAI/ARIA/apg/patterns/tabs/).
 - [MDN Web Docs](https://developer.mozilla.org/) was used for `localStorage`, the Canvas API, `IntersectionObserver`, `URLSearchParams` and the `inert` attribute.
-- Development support: I used Claude (Anthropic) as an AI coding assistant for planning, code suggestions and reviewing my work. *[TO DO: check this matches your course rules on AI use]*
+- Development support: I used Claude (Anthropic) as an AI coding assistant for planning, code suggestions and reviewing my work.
 
 ### Media
 - Logo and icons designed by with help from claude ai.
