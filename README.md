@@ -558,6 +558,32 @@ Deployed to GitHub Pages from the `main` branch once every feature was committed
 
 ## 10. Testing
 
+### Manual vs automated testing
+
+I used both types of testing on this project, because each one finds problems the other can miss.
+
+**Automated testing** is when code tests code. I write a test once that gives a function an input and says what the output should be, and a test runner (Jest) checks it for me every time I run `npm test`. It is fast, gives the same result every time and can run hundreds of checks in seconds.
+
+**Manual testing** is when a person uses the site the way a visitor would: clicking, typing, tabbing with the keyboard, resizing the window and reading what appears. It is slower and has to be repeated by hand, but it is the only way to judge things a computer can't, such as whether a layout looks right, whether a message makes sense or whether a feature feels easy to use.
+
+**When each one should be used**
+
+| | Automated testing | Manual testing |
+|---|---|---|
+| Best for | Logic with clear right and wrong answers | Look, feel, usability and real user journeys |
+| When to run it | After every change, especially to code that is re-run often | When a feature is finished, at each screen size, and again on the live site |
+| Main strength | Catches regressions straight away (a change that quietly breaks something that used to work) | Finds problems a test can't describe, such as overlapping text or confusing feedback |
+| Main weakness | Only checks what I thought to test, and can't see the page | Slow, and easy to miss a step if not written down |
+
+**How I used them in Designed to Wonder**
+
+- **Automated for the logic.** The countdowns, filters, search, form validation and journey score all depend on maths and rules with exact answers. For example, `getTimeRemaining` must never show a negative number, and `isValidEmail` must reject `ada@`. These functions run every second or on every key press, and many pages share them, so one mistake would spread across the whole site. I kept them as pure functions in `utils.js` so Jest could test them, and I re-ran the tests after every change to `utils.js` or `data.js`. The tests also check the content itself, such as every launch having a source link, because new posts and launches will be added to `data.js` after the course and a test catches a missing field before it reaches the live site.
+- **Manual for the experience.** Things like the flip cards moving focus to Flip back, the mobile menu closing with Escape, the journey map glow lining up with the dots, the layout at 320px and the light and dark themes can only be judged by looking and using. These were tested by hand as each feature was finished (see [Manual feature testing](#manual-feature-testing)), at every screen size (see [Responsiveness](#responsiveness)), with the keyboard and axe (see [Accessibility testing](#accessibility-testing)), and against each user story (see [User story testing](#user-story-testing)).
+- **Both together for the most important features.** Some features needed both. `escapeHTML` is tested automatically to prove that HTML typed by a user is never run, and I also typed `<b>Wonder why</b> cats purr?` into the Ask a question form by hand to see that it really shows as plain text on the page. The countdown maths is tested in Jest, and I checked by hand that a card visibly changes to Landed when its countdown reaches zero.
+- **Manual on the live site.** After deploying, I repeated the manual checks on GitHub Pages, because automated tests run on my machine and can't tell me whether the deployed version matches the development version.
+
+Several bugs in the [Bugs](#11-bugs) section, such as the search icon covering the placeholder text and the journey map line not lining up, were only found through manual testing. This is why I didn't rely on automated tests alone.
+
 ### Automated testing with Jest
 
 59 tests cover every helper function plus checks on the content itself, for example that every launch has a source link and every post has a simple version.
