@@ -393,6 +393,25 @@ The JavaScript is split by job, so each file is small and easy to find.
 - **Performance.** One timer updates every countdown on the page. The canvas animation stops when it is off screen or the tab is hidden.
 - **Progressive enhancement.** Pages that need JavaScript show a `<noscript>` message. The scroll reveal only hides content once JavaScript has added the `js` class, so nothing is lost if a script fails.
 
+### Asynchronous code and timing
+
+JavaScript runs one thing at a time, but a lot of this site happens *later*: when a timer fires, when the browser is ready to draw, when a user types or when an element scrolls into view. These callbacks run in an order I don't fully control, and several of them read and change the same values. These are the timing problems I planned for and how the code handles them.
+
+| Timing problem | What could go wrong | How the code handles it | File |
+|---|---|---|---|
+| **Timers drift** | `setInterval(fn, 1000)` does not run exactly every second. Browsers slow timers down in background tabs, so a countdown that subtracted 1 each tick would fall behind and show the wrong time | Countdowns never count down a stored number. Every tick works out the time left again from the real clock with `getTimeRemaining(date)`, which uses `Date.now()`. However late a tick fires, or after a tab has been in the background, the next tick is correct | `utils.js`, `t-minus.js`, `home.js` |
+| **Many countdowns, many timers** | One `setInterval` per card would mean many timers firing at slightly different moments, so the seconds would visibly fall out of step | One timer, `tickCountdowns()`, updates every countdown on the page together | `t-minus.js` |
+| **Cards redrawn between ticks** | Filtering or searching replaces the cards with `innerHTML`. A timer holding references to the old cards would update elements that no longer exist, and new cards would show empty values until the next tick | The timer looks up `[data-countdown]` elements fresh on every tick instead of keeping old references, and `render()` calls `tickCountdowns()` straight away so new cards show the right time immediately | `t-minus.js` |
+| **Reaching zero** | When a countdown hits zero, the timer keeps firing every second. Without a guard it would redraw the whole grid every second forever | The first time a countdown reaches zero, it is marked with `data-finished`, then the grid and Next up panel are redrawn once so the card says Landed. The flag stops it happening again | `t-minus.js` |
+| **Two events starting the same animation** | The pixel band starts when it scrolls into view (`IntersectionObserver`) and when the tab becomes visible again (`visibilitychange`). If both fired, two `requestAnimationFrame` loops would run at once, doubling the speed and the work | `frameId` is shared state that records whether a loop is running. `start()` only begins a loop when `frameId` is `null`, and `stop()` cancels it and sets it back to `null`. The animation also only runs when it is both on screen and in a visible tab | `pixel-field.js` |
+| **Steps that depend on the step before** | The typewriter waits a different time after each letter, after a full phrase and after deleting. A fixed `setInterval` can't change its delay | Each `tick()` works out its own next delay and schedules the next step with `setTimeout`, so steps always run in order and never overlap | `home.js` |
+| **Scripts depending on each other** | Page scripts use `DTW.utils`, `DTW.data` and `DTW.storage`. If a page script ran before those existed, it would throw an error | Scripts load at the bottom of the body in a fixed order: `utils.js`, `data.js`, `main.js`, `pixel-field.js`, then the page script. Shared features in `main.js` wait for `DOMContentLoaded` before touching the page | Every HTML page |
+| **Memory and storage out of step** | The watchlist lives in a variable and in `localStorage`. If only one was updated, a reload would show a different list from the screen | Every change updates `state.watchlist` and saves it with `storage.set()` in the same click handler, before the grid is redrawn. Focus is then moved back to the same button, because the redraw replaced it | `t-minus.js`, `main.js` |
+
+**Testing the timing.** `getTimeRemaining` takes an optional `now` value, so the Jest tests can pass in a fixed time instead of the real clock and get the same result every run. Things that depend on real time passing, such as the seconds changing and a card switching to Landed, were tested by hand (see [Manual vs automated testing](#manual-vs-automated-testing)).
+
+**Network requests.** The site loads all of its content from `data.js`, so it makes no network requests and doesn't need `fetch`, Promises or `async` / `await` yet. The contact form opens the visitor's email app instead of sending data. When I add a real contact service (see [Future features](#future-features)), the form will send with `fetch` and `async` / `await`, disable the submit button while waiting so the message can't be sent twice, and only show success once the service replies.
+
 ---
 
 ## 6. Accessibility
@@ -890,6 +909,7 @@ My tutor's feedback on the first submission praised the README, the UX documenta
 | The principles of automated and manual testing, and when each might be used, were not explained | 3.1 | Added a section explaining what each type of testing is, when each one should be used, and how and why I used each one on this site | [Manual vs automated testing](#manual-vs-automated-testing) |
 | The deployment section did not explain how a developer would get their own version live online | Merit (vii) | Added step by step instructions for deploying a fork to GitHub Pages, publishing changes, and fixing common problems | [Deploy your own copy](#deploy-your-own-copy) |
 | A placeholder note was left in the AI credit | 5.4 | Removed the placeholder and tidied the wording of the credits | [Credits](#13-credits) |
+| Distinction characteristics: a clear understanding of asynchronicity and timing problems | Distinction | Documented the timing problems in the site's JavaScript and how the code handles each one | [Asynchronous code and timing](#asynchronous-code-and-timing) |
 | Commits often grouped several features together | Merit (iii) | Made every change for this submission as a separate, small commit with a clear message, and updated the version control notes to reflect this | [Version control](#version-control) and the [commit history](https://github.com/llilzizl/designed-to-wonder/commits/main) |
 
 **Commits for this submission**
@@ -902,3 +922,4 @@ My tutor's feedback on the first submission praised the README, the UX documenta
 | `Fix wording in media credits and acknowledgements` | Corrects unclear wording in the credits |
 | `Update version control notes to match commit history` | Makes the version control notes accurate |
 | `Add changes for second submission section to README` | Adds this section |
+| `Document asynchronous code and timing in README` | Explains how the JavaScript handles timing problems |
