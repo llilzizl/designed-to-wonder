@@ -643,6 +643,48 @@ npm test
 | W3C CSS Validator (Jigsaw) | `style.css` | No errors |
 | JSHint (`esversion: 6`) | All JavaScript files | No warnings |
 
+#### W3C HTML results for every page
+
+Every page was checked again on the live site by address, using the [W3C Nu Html Checker](https://validator.w3.org/nu/), before the second submission. All 7 pages show "Document checking completed. No errors or warnings to show."
+
+| Page | Address checked | Result |
+|---|---|---|
+| Home | [index](https://validator.w3.org/nu/?doc=https%3A%2F%2Fllilzizl.github.io%2Fdesigned-to-wonder%2F) | No errors or warnings |
+| Client Side | [client-side.html](https://validator.w3.org/nu/?doc=https%3A%2F%2Fllilzizl.github.io%2Fdesigned-to-wonder%2Fclient-side.html) | No errors or warnings |
+| T-Minus | [t-minus.html](https://validator.w3.org/nu/?doc=https%3A%2F%2Fllilzizl.github.io%2Fdesigned-to-wonder%2Ft-minus.html) | No errors or warnings |
+| The Shapers | [the-shapers.html](https://validator.w3.org/nu/?doc=https%3A%2F%2Fllilzizl.github.io%2Fdesigned-to-wonder%2Fthe-shapers.html) | No errors or warnings |
+| Wonder Why | [wonder-why.html](https://validator.w3.org/nu/?doc=https%3A%2F%2Fllilzizl.github.io%2Fdesigned-to-wonder%2Fwonder-why.html) | No errors or warnings |
+| Built by Lilian | [built-by-lilian.html](https://validator.w3.org/nu/?doc=https%3A%2F%2Fllilzizl.github.io%2Fdesigned-to-wonder%2Fbuilt-by-lilian.html) | No errors or warnings |
+| 404 | [404.html](https://validator.w3.org/nu/?doc=https%3A%2F%2Fllilzizl.github.io%2Fdesigned-to-wonder%2F404.html) | No errors or warnings |
+
+**Home**
+
+![W3C validator: Home page has no errors or warnings](docs/readme-images/readme-testing-w3c-html-home.webp)
+
+**Client Side**
+
+![W3C validator: Client Side page has no errors or warnings](docs/readme-images/readme-testing-w3c-html-client-side.webp)
+
+**T-Minus**
+
+![W3C validator: T-Minus page has no errors or warnings](docs/readme-images/readme-testing-w3c-html-t-minus.webp)
+
+**The Shapers**
+
+![W3C validator: The Shapers page has no errors or warnings](docs/readme-images/readme-testing-w3c-html-the-shapers.webp)
+
+**Wonder Why**
+
+![W3C validator: Wonder Why page has no errors or warnings](docs/readme-images/readme-testing-w3c-html-wonder-why.webp)
+
+**Built by Lilian**
+
+![W3C validator: Built by Lilian page has no errors or warnings](docs/readme-images/readme-testing-w3c-html-built-by-lilian.webp)
+
+**404**
+
+![W3C validator: 404 page has no errors or warnings](docs/readme-images/readme-testing-w3c-html-404.webp)
+
 ### Accessibility testing
 
 | Page | axe (dark theme) | axe (light theme) |
@@ -909,6 +951,7 @@ My tutor's feedback on the first submission praised the README, the UX documenta
 | The principles of automated and manual testing, and when each might be used, were not explained | 3.1 | Added a section explaining what each type of testing is, when each one should be used, and how and why I used each one on this site | [Manual vs automated testing](#manual-vs-automated-testing) |
 | The deployment section did not explain how a developer would get their own version live online | Merit (vii) | Added step by step instructions for deploying a fork to GitHub Pages, publishing changes, and fixing common problems | [Deploy your own copy](#deploy-your-own-copy) |
 | A placeholder note was left in the AI credit | 5.4 | Removed the placeholder and tidied the wording of the credits | [Credits](#13-credits) |
+| HTML and CSS validation passed "on the pages that were tested" | 2.1 | Re-checked all 7 HTML pages on the live site with the W3C validator and added a screenshot of each result | [W3C HTML results for every page](#w3c-html-results-for-every-page) |
 | Distinction characteristics: a clear understanding of asynchronicity and timing problems | Distinction | Documented the timing problems in the site's JavaScript and how the code handles each one | [Asynchronous code and timing](#asynchronous-code-and-timing) |
 | Commits often grouped several features together | Merit (iii) | Made every change for this submission as a separate, small commit with a clear message, and updated the version control notes to reflect this | [Version control](#version-control) and the [commit history](https://github.com/llilzizl/designed-to-wonder/commits/main) |
 
@@ -923,3 +966,4 @@ My tutor's feedback on the first submission praised the README, the UX documenta
 | `Update version control notes to match commit history` | Makes the version control notes accurate |
 | `Add changes for second submission section to README` | Adds this section |
 | `Document asynchronous code and timing in README` | Explains how the JavaScript handles timing problems |
+| `Add W3C validator screenshots for all pages` | Shows every HTML page passes validation |
