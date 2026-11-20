@@ -806,6 +806,39 @@ npm test
 1. On the repository page, click **Fork**.
 2. A copy is created in your own GitHub account.
 
+### Deploy your own copy
+
+These steps let another developer put their own version of the site live online.
+
+1. Fork the repository (see above), so you have your own copy at `https://github.com/<your-username>/designed-to-wonder`.
+2. In **your fork**, open **Settings**, then **Pages**.
+3. Under **Build and deployment**, set **Source** to **Deploy from a branch**.
+4. Select the **main** branch and the **/ (root)** folder, then click **Save**.
+5. Wait a minute or two, then refresh the Pages settings. Your live address appears at the top: `https://<your-username>.github.io/designed-to-wonder/`
+6. Open the live address and check every page, feature and the browser console, as in step 6 of [GitHub Pages](#github-pages) above.
+
+**To make changes and publish them:**
+
+1. Clone your fork, not the original repository:
+   ```
+   git clone https://github.com/<your-username>/designed-to-wonder.git
+   cd designed-to-wonder
+   ```
+2. Make your changes and test them locally with Live Server and `npm test`.
+3. Commit and push to `main`:
+   ```
+   git add .
+   git commit -m "Describe your change"
+   git push origin main
+   ```
+4. GitHub Pages rebuilds the site automatically. After a minute or two, refresh your live address to see the change. You can follow the progress in the **Actions** tab of your fork.
+
+**Things to check**
+
+- If you rename the repository, the live address changes to match the new name.
+- All links between pages are relative, so the site works at any address without changing the code.
+- If the live site doesn't show your latest change, wait a little longer and hard refresh the page (Ctrl + Shift + R, or Cmd + Shift + R on a Mac).
+
 ### Version control
 
 Git was used throughout with small commits, one for each feature or fix, and messages that start with a verb, such as `Add`, `Fix`, `Update` or `Refactor`.
