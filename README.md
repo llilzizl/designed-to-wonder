@@ -26,6 +26,7 @@ It also shows people what I can build. It links to my Les Braid It booking syste
 11. [Bugs](#11-bugs)
 12. [Deployment](#12-deployment)
 13. [Credits](#13-credits)
+14. [Changes for the second submission](#14-changes-for-the-second-submission)
 
 ---
 
@@ -843,7 +844,7 @@ These steps let another developer put their own version of the site live online.
 
 Git and GitHub were used for version control, with messages that start with a verb, such as `Add`, `Fix`, `Update` or `Refactor`.
 
-In my first submission, some commits grouped several features together (for example, the theme switch, mobile menu and newsletter validation in one commit). For the second submission, every change is its own small commit with one clear purpose, so each fix can be found, understood and reversed on its own (see [Changes for the second submission](#changes-for-the-second-submission)).
+In my first submission, some commits grouped several features together (for example, the theme switch, mobile menu and newsletter validation in one commit). For the second submission, every change is its own small commit with one clear purpose, so each fix can be found, understood and reversed on its own (see [Changes for the second submission](#14-changes-for-the-second-submission)).
 
 ---
 
@@ -877,3 +878,27 @@ https://pin.it/gjEGwkx9f
 ### Acknowledgements
 - My tutor, for the Milestone 1 feedback that shaped this project's documentation.
 - Claude (Anthropic), for help with debugging my code.
+
+---
+
+## 14. Changes for the second submission
+
+My tutor's feedback on the first submission praised the README, the UX documentation, the testing screenshots and the error-free JavaScript. These are the changes I made in response to the points that still needed work. Each change was made as its own small commit.
+
+| Feedback | Criterion | What I changed | Where to find it |
+|---|---|---|---|
+| The principles of automated and manual testing, and when each might be used, were not explained | 3.1 | Added a section explaining what each type of testing is, when each one should be used, and how and why I used each one on this site | [Manual vs automated testing](#manual-vs-automated-testing) |
+| The deployment section did not explain how a developer would get their own version live online | Merit (vii) | Added step by step instructions for deploying a fork to GitHub Pages, publishing changes, and fixing common problems | [Deploy your own copy](#deploy-your-own-copy) |
+| A placeholder note was left in the AI credit | 5.4 | Removed the placeholder and tidied the wording of the credits | [Credits](#13-credits) |
+| Commits often grouped several features together | Merit (iii) | Made every change for this submission as a separate, small commit with a clear message, and updated the version control notes to reflect this | [Version control](#version-control) and the [commit history](https://github.com/llilzizl/designed-to-wonder/commits/main) |
+
+**Commits for this submission**
+
+| Commit message | Purpose |
+|---|---|
+| `Add manual vs automated testing section to README` | Meets criterion 3.1 |
+| `Expand deployment steps for forked copies` | Fully documents deployment for other developers |
+| `Remove placeholder note from AI credit` | Removes leftover placeholder text |
+| `Fix wording in media credits and acknowledgements` | Corrects unclear wording in the credits |
+| `Update version control notes to match commit history` | Makes the version control notes accurate |
+| `Add changes for second submission section to README` | Adds this section |
