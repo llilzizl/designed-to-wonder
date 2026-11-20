@@ -841,7 +841,9 @@ These steps let another developer put their own version of the site live online.
 
 ### Version control
 
-Git was used throughout with small commits, one for each feature or fix, and messages that start with a verb, such as `Add`, `Fix`, `Update` or `Refactor`.
+Git and GitHub were used for version control, with messages that start with a verb, such as `Add`, `Fix`, `Update` or `Refactor`.
+
+In my first submission, some commits grouped several features together (for example, the theme switch, mobile menu and newsletter validation in one commit). For the second submission, every change is its own small commit with one clear purpose, so each fix can be found, understood and reversed on its own (see [Changes for the second submission](#changes-for-the-second-submission)).
 
 ---
 
